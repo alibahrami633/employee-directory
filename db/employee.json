@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "employeeName": "Ali Bahrami",
+        "phone": "000111222",
+        "email": "ali@bahrami.com",
+        "position": "CEO"
+    },
+    {
+        "id": 2,
+        "employeeName": "John Smith",
+        "phone": "000111333",
+        "email": "john@smith.com",
+        "position": "HR Manager"
+    },
+    {
+        "id": 3,
+        "employeeName": "John Doe",
+        "phone": "000111444",
+        "email": "john@doe.com",
+        "position": "Marketing Manager"
+    },
+    {
+        "id": 4,
+        "employeeName": "Mary Smith",
+        "phone": "000111555",
+        "email": "mary@smith.com",
+        "position": "Sales Representative"
+    },
+    {
+        "id": 5,
+        "employeeName": "Sara Doe",
+        "phone": "000111666",
+        "email": "sara@doe.com",
+        "position": "IT Consultant"
+    },
+    {
+        "id": 6,
+        "employeeName": "Rod Philips",
+        "phone": "000111222",
+        "email": "rod@philips.com",
+        "position": "Help Desk Support"
+    }
+]
