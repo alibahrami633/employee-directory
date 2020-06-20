@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Form, Autosuggest } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
@@ -11,7 +11,7 @@ function SearchForm(props) {
         <Form.Control type="text" size="lg"
           value={props.search}
           onChange={props.handleInputChange}
-          placeholder="Type in an employee name to begin"
+          placeholder="Type in some letters of the employees name to begin"
           list="employees"
         />
         <datalist id="employees">
@@ -20,7 +20,7 @@ function SearchForm(props) {
           ))}
         </datalist>
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-          Filter
+          Filter by Name
         </button>
       </Form.Group>
     </Form>
