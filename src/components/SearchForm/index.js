@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 import { Form } from "react-bootstrap";
+// import compareValues from "../../utils/API"
+const API = require("../../utils/API")
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
@@ -14,10 +16,15 @@ function SearchForm(props) {
           placeholder="Type in some letters of the employees name to begin"
           list="employees"
         />
+
         <datalist id="employees">
-          {props.employees.map(employee => (
+          {/* {props.employees.sort((a, b) => (a.employeeName.toLowerCase() > b.employeeName.toLowerCase()) ? 1 : -1).map(employee => (
+            <option value={employee.employeeName} key={employee.id} />
+          ))} */}
+          {props.employees.sort(API.default.compareValues("phone", "asc")).map(employee => (
             <option value={employee.employeeName} key={employee.id} />
           ))}
+          {console.log(props.employees)}
         </datalist>
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Filter by Name
