@@ -10,7 +10,8 @@ function App() {
     <BrowserRouter>
       <Wrapper>
         <Container fluid>
-          <Route exact path="/" component={Search} />
+          <Search />
+          {/* <Route exact path="/" component={Search} /> */}
         </Container>
         <Footer />
       </Wrapper>
