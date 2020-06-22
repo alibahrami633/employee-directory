@@ -1,36 +1,61 @@
 import React from "react";
 import "./style.css";
-import { Form } from "react-bootstrap";
-// import compareValues from "../../utils/API"
-const API = require("../../utils/API")
+import { Form, InputGroup, Button, DropdownButton, DropdownItem, Row, Col } from "react-bootstrap";
+
+const API = require("../../utils/API");
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
-    <Form>
-      <Form.Group>
-        <Form.Label htmlFor="employee">Employee Name:</Form.Label>
-        <Form.Control type="text" size="lg"
-          value={props.search}
-          onChange={props.handleInputChange}
-          placeholder="Type in some letters of the employees name to begin"
-          list="employees"
-        />
+    <Row>
+      <Col md={12}>
+        <Form>
+          <Form.Group>
+            <Row>
+              <Col md={12}>
+                <InputGroup className="mb-3">
+                  <Form.Control type="text" size="lg"
+                    value={props.search}
+                    onChange={props.handleInputChange}
+                    placeholder="Employee Name ..."
+                    list="employees"
+                  />
+                  <datalist id="employees">
+                    {props.employees.sort(API.default.compareValues(props.sort, "asc")).map(employee => (
+                      <option value={employee.employeeName} key={employee.id} />
+                    ))}
+                  </datalist>
+                  <InputGroup.Append>
+                    <Button variant="primary" type="submit" onClick={props.handleFormSubmit}>Filter by Name</Button>
+                  </InputGroup.Append>
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={5}>
+                <div className="btn-group">
+                  <select onChange={props.handleSortChange} drop="right" id="dropdown-sort" title="Sort by ..." variant="secondary">
+                    <option value="id" key="id">ID</option>
+                    <option value="employeeName" key="employeeName">Employee Name</option>
+                    <option value="phone" key="phone">Phone</option>
+                    <option value="email" key="email">Email</option>
+                    <option value="position" key="position">Position</option>
+                    {/* {Object.keys(props.employees[0]).map(keyItem => (<Dropdown.Item href="#">{keyItem}</Dropdown.Item>))} */}
+                  </select>
+                </div>
+              </Col>
+              <Col md={9}>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              </Col>
+            </Row>
+          </Form.Group>
+        </Form>
+      </Col>
+    </Row >
 
-        <datalist id="employees">
-          {/* {props.employees.sort((a, b) => (a.employeeName.toLowerCase() > b.employeeName.toLowerCase()) ? 1 : -1).map(employee => (
-            <option value={employee.employeeName} key={employee.id} />
-          ))} */}
-          {props.employees.sort(API.default.compareValues("phone", "asc")).map(employee => (
-            <option value={employee.employeeName} key={employee.id} />
-          ))}
-          {console.log(props.employees)}
-        </datalist>
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-          Filter by Name
-        </button>
-      </Form.Group>
-    </Form>
   );
 }
 

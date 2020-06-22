@@ -74,4 +74,6 @@ let list = [
     }
 ];
 
-console.log(list.sort(compareValues("email", "asc")));
+// console.log(list.sort(compareValues("email", "asc")));
+let res = Object.keys(list[0])
+console.log(res);

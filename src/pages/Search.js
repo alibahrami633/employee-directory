@@ -9,7 +9,8 @@ class Search extends Component {
     search: "",
     employees: [], // all employees
     results: [],   // filtered employees
-    error: ""
+    error: "",
+    sort: ""
   };
 
   // componentDidMount will be called only once after the first render
@@ -21,7 +22,11 @@ class Search extends Component {
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
-  };
+  }
+
+  handleSortChange = event => {
+    this.setState({ sort: event.target.value });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -33,17 +38,19 @@ class Search extends Component {
   };
   render() {
     return (
-      <div>
-        <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Employees' List</h1>
+      <>
+        <h1 className="text-center">Employees' List</h1>
+        <Container>
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
+            handleSortChange={this.handleSortChange}
             employees={this.state.employees}
+            sort={this.state.sort}
           />
           <SearchResults results={this.state.results} />
         </Container>
-      </div>
+      </>
     );
   }
 }

@@ -1,16 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper";
+import Wrapper from "./components/Wrapper"
 import Search from "./pages/Search";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        <Route exact path="/" component={Search} />
+        <Container fluid>
+          <Route exact path="/" component={Search} />
+        </Container>
+        <Footer />
       </Wrapper>
-      <Footer />
     </BrowserRouter>
   );
 }
