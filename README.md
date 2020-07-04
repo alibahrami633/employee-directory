@@ -34,7 +34,7 @@
 
 <hr/>
     <p>
-        <a href="https://alibahrami633.github.io/employee-directory/" target="_blank">Deployed Application </a>
+        Deployed Application:<a href="https://alibahrami633.github.io/employee-directory/" target="_blank"> https://alibahrami633.github.io/employee-directory/</a>
     </p>
 <hr/>
 <br>
