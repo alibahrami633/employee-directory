@@ -4,9 +4,10 @@
 
 ## Description
 <hr/>    
-
-    This application is written with ReactJS.
-    This application lets a user to search for a particular name in the directory of employees to retreive the information about them.
+<p>
+    Employee Directory Access created by ReactJS. 
+    The user can have access to the list of employees and filter or change the order of the list by typing their name letters.
+</p>
 
 <hr/>
 <br>
